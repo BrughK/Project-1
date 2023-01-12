@@ -9,9 +9,63 @@
     <title>Currency Converter</title>
 </head>
 
+<!-- Header & subtitle -->
 <body>
+    <header class="has-text-centered  has-background-primary-dark">
+        <h1 class="title has-text-primary-light">Currency Converter</h1>
+        <h2 class="subtitle has-text-primary-light">For all your currency needs</h2>
+    </header>
 
+<!--Hero body for currency converter-->
+<hero-body>
+    
+    <!-- Main container to hold the input slots-->
+    <div class="tile is-parent level">
+        <div class="title">Enter Amount</div>
+    <div class="tile is-child box has-background-light">
+        <div class="field level-item">
+            
+            <!-- Input spot 1 -->
+            <label class="label">From</label>
+            <div class="control">
+                <input class="input" type="text" placeholder="0">
+            </div>
+        </div>
+            <div class="field level-item">
+              
+              <!-- Input spot 2 -->
+              <label class="label">  To </label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="0">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Button -->
+    <div class="level-item">
+    <div class="buttons">
+        <button class="button is-primary is-large">Start conversion</button>
+    </div>
+</div>
+</hero-body>
+
+<!-- Bitcoin section -->
+<section class="has-content-centered">
+    <div class="level-item">
+        <div class="box  has-background-light">
+            <button class="button is-primary is-large">Bitcoin!</button>
+        </div>
+    </div>
+</section>
 </body>
+
+<!-- Footer elements -->
+<footer>
+
+</footer>
+
+
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/script.js"></script>
