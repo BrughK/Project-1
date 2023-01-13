@@ -2,7 +2,10 @@ let dropList = document.querySelectorAll("form select");
 let fromCurrency = document.querySelector(".from select");
 let toCurrency = document.querySelector(".to select");
 let getButton = document.querySelector("form button");
-let country_list = {
+let previousCon = JSON.parse(localStorage.getItem("#standard-select"))
+var APIKey = "d66d2ede002583e676b55c4e";
+var todaysDate = moment().format("MMMM Do, YYYY");
+const country_list = {
     "AED" : "AE",
     "AFN" : "AF",
     "XCD" : "AG",
@@ -164,6 +167,24 @@ let country_list = {
 }
 
 
+// Work in progress for local storage
+console.log(previousCon);
+const optionsHTML = generateOptions(country_list)
+
+function generateOptions(options) {
+    return Object.entries(options).map(([currency_code, currency]) => {
+        console.log(currency_code, currency);
+    });
+  }
+
+if (!previousCon) {
+    previousCon = [];
+}
+
+// Setting the date at the top
+var dateElement = document.getElementById("current-date");
+dateElement.textContent = todaysDate;
+
 // Country currency codes
 for (let i = 0; i < dropList.length; i++) {
     for (let currency_code in country_list){
@@ -228,7 +249,7 @@ function getExchangeRate(){
     }
     
     exchangeRateTxt.innerText = "Calculating Rate...";
-    let url = `https://v6.exchangerate-api.com/v6/d66d2ede002583e676b55c4e/latest/${fromCurrency.value}`;
+    let url = `https://v6.exchangerate-api.com/v6/${APIKey}/latest/${fromCurrency.value}`;
     fetch(url).then(response => response.json()).then(result =>{
         let exchangeRate = result.conversion_rates[toCurrency.value];
         let totalExRate = (amountVal * exchangeRate).toFixed(2);
