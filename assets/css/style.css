@@ -1,8 +1,30 @@
 header {
     padding: 1rem 0 1rem 0;
+    animation: 1s ease-in-out 0s drawIn;
+}
+
+@keyframes slideInLeft {
+    0% {
+      opacity: 10%;  
+      transform: translateX(-100%);
+    }
+    100% {
+      opacity: 100%;  
+      transform: translateX(0);
+    }
+}
+
+@keyframes drawIn {
+    0% {
+        opacity: 10%;
+    }
+    100% {
+        opacity: 100%;
+    }
 }
 
 .boxMain {
+    animation: 1.5s ease-in-out 0s slideInLeft;
     margin-top: 2rem;
     padding: 5rem 0 5rem 0;
     width: 900px;
@@ -14,6 +36,7 @@ header {
 }
 
 .boxBit {
+    animation: 1.5s ease-in-out 0s slideInLeft;
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
@@ -24,10 +47,13 @@ header {
     font-weight: bold;
 }
 
+footer {
+    animation: 1s ease-in-out 0s drawIn;
+}
+
 img {
     padding: 0.25rem 1rem 0 1rem;
 }
-
 
 button {
     margin: 1rem;
