@@ -21,37 +21,20 @@
 
         <!-- container for graph/API data  -->
         <section class="container is-fluid">
-            <div>
-                Box for graph/API data
-            </div>
+            <div class="btcwdgt-chart" bw-cash="true" bw-noshadow="true"></div>
          </section>
         
         
          <!--container for conversion data -->
          <section class="container is-fluid">
-            <div>
-                Box for conversion Data
-            </div>
+            <div class="btcwdgt-news" bw-cur="usd"></div>
+            <div class="btcwdgt-news" bw-cur="cad"></div>
+            <div class="btcwdgt-news" bw-cur="eur"></div>
+            <div class="btcwdgt-news" bw-cur="jpy"></div>
+            <div class="btcwdgt-news" bw-cur="gbp"></div>
+            <div class="btcwdgt-news" bw-cur="aud"></div>
+            <div class="btcwdgt-news" bw-cur="chf"></div>
          </section>
-
-        
-            <div class="buttons">
-                <button class="button is-primary is-large">Past Btn</button>
-                <button class="button is-primary is-large">Past Btn</button>
-                <button class="button is-primary is-large">Past Btn</button>
-                <button class="button is-primary is-large">Past Btn</button>
-            </div>
-        </div>
-    </section>
-
-
-         <section class="has-content-centered">
-            <div class="level-item">
-                <div class="box  has-background-light">
-                    <button class="button is-primary is-large">convert</button>
-                </div>
-            </div>
-        </section>
        
 
 
@@ -70,5 +53,14 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/script.js"></script>
+    <script>
+        (function(b,i,t,C,O,I,N) {
+          window.addEventListener('load',function() {
+            if(b.getElementById(C))return;
+            I=b.createElement(i),N=b.getElementsByTagName(i)[0];
+            I.src=t;I.id=C;N.parentNode.insertBefore(I, N);
+          },false)
+        })(document,'script','https://widgets.bitcoin.com/widget.js','btcwdgt');
+      </script>
 </body>
 </html>
