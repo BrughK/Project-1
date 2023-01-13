@@ -1,0 +1,49 @@
+header {
+    padding: 1rem 0 1rem 0;
+}
+
+.boxMain {
+    margin-top: 2rem;
+    padding-bottom: 15rem;
+    width: 900px;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.boxBit {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.exchange-rate {
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+img {
+    padding: 0.25rem 1rem 0 1rem;
+}
+
+
+button {
+    margin: 1rem;
+}
+
+form {
+    padding: 1rem 1.5rem 1rem 1.5rem;
+    border: 2px solid rgba(0, 0, 0, 0.137);
+    border-style: dashed;
+    border-radius: 5px;
+}
+
+label {
+    padding-top: 0.5rem;
+}
+
+.title {
+    padding-bottom: 0.5rem;
+}
