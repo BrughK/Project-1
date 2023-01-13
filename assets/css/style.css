@@ -47,3 +47,23 @@ label {
 .title {
     padding-bottom: 0.5rem;
 }
+
+.chart-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+#test2 {
+    width: 100%;
+    max-height: min-content;
+}
+
+#test {
+    max-width: 100% !important;
+}
