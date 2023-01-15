@@ -1,51 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- Bulma stylesheet -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-        <link rel="stylesheet" href="./assets/css/style.css">
-        <title>Document</title>
-    </head>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bulma stylesheet -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Document</title>
+  </head>
     <!-- Header & subtitle -->
     <body>
-        <header class="has-text-centered  has-background-primary-dark">
-            <h1 class="title has-text-primary-light">Currency Converter</h1>
-            <h1 class="subtitle mb-1 has-text-primary-light">For all your conversion needs</h4>
-            <h1 class="subtitle has-text-primary-light" id="current-date"></h5>
-        </header>
+      <header class="has-text-centered has-background-primary-dark w-auto">
+        <h1 class="title has-text-primary-light">Currency Converter</h1>
+        <h1 class="subtitle mb-1 has-text-primary-light">For all your conversion needs</h4>
+        <h1 class="subtitle has-text-primary-light" id="current-date"></h5>
+      </header>
     <!--Hero body for currency converter-->
     <hero-body>
-        <!-- Main container to hold the input slots-->
-        <div class="level-item">
-            <div class="box boxMain has-background-light">
-                <div class="wrapper">
-                    <form action="#">
-                      <div class="amount">
-                        <label class="label title">Enter Amount</label>
-                        <input class="input is-success" type="text" value="1">
-                      </div>
-                      <div class="drop-list">
-                        <div class="from">
-                          <label class="label">From:</label>
-                            <img src="https://flagcdn.com/48x36/us.png" alt="flag">
-                            <select id="standard-select"> <!-- Options tag are inserted from JavaScript --> </select>
-                        </div>
-                        <div class="icon"><i class="fas fa-exchange-alt"></i></div>
-                        <div class="to">
-                            <label class="label">To:</label>
-                            <img src="https://flagcdn.com/48x36/ca.png" alt="flag">
-                            <select id="standard-select"> <!-- Options tag are inserted from JavaScript --> </select>
-                        </div>
-                      </div>
-                      <div class="exchange-rate">Calculating Rate...</div>
-                      <button class="button is-success">Get Exchange Rate</button>
-                    </form>
-                  </div>
-            </div>
+      <!-- Main container to hold the input slots-->
+      <div class="level-item">
+        <!-- Section for Past conversions -->
+        <div class="history-section">
+          <h4 class="histTxt">Previous Conversions</h4>
+          <div id="historybox">
+            <ul id="history"></ul>
+          </div>
         </div>
+        <!-- Main box for conversion -->
+        <div class="box boxMain has-background-light">
+          <!-- Wrapper for converter box -->
+          <div class="wrapper">
+            <form action="#">
+              <div class="amount">
+                <label class="label title">Enter Amount</label>
+                  <input class="input is-success" type="text" value="1">
+              </div>
+              <div class="drop-list">
+                <div class="from">
+                  <label class="label">From:</label>
+                    <img src="https://flagcdn.com/48x36/us.png" alt="flag">
+                    <select id="standard-select"> <!-- Options tag are inserted from JavaScript --> </select>
+                </div>
+                <div class="icon"><i class="fas fa-exchange-alt"></i></div>
+                <div class="to">
+                    <label class="label">To:</label>
+                    <img src="https://flagcdn.com/48x36/ca.png" alt="flag">
+                    <select id="standard-select"> <!-- Options tag are inserted from JavaScript --> </select>
+                </div>
+              </div>
+              <div class="exchange-rate">Calculating Rate...</div>
+              <button class="button is-success">Get Exchange Rate</button>
+            </form>
+          </div>
+        </div>
+      </div>
     </hero-body>
     <!-- Bitcoin section -->
     <section class="has-content-centered">

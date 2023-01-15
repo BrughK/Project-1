@@ -2,9 +2,14 @@ let dropList = document.querySelectorAll("form select");
 let fromCurrency = document.querySelector(".from select");
 let toCurrency = document.querySelector(".to select");
 let getButton = document.querySelector("form button");
-let previousCon = JSON.parse(localStorage.getItem("#standard-select"))
 var APIKey = "d66d2ede002583e676b55c4e";
 var todaysDate = moment().format("MMMM Do, YYYY");
+let conversions = [];
+let conList = document.getElementById('history');
+let historyBtn = document.getElementById('hsitory');
+
+
+
 const country_list = {
     "AED" : "AE",
     "AFN" : "AF",
@@ -168,18 +173,7 @@ const country_list = {
 
 
 // Work in progress for local storage
-console.log(previousCon);
-const optionsHTML = generateOptions(country_list)
 
-function generateOptions(options) {
-    return Object.entries(options).map(([currency_code, currency]) => {
-        console.log(currency_code, currency);
-    });
-  }
-
-if (!previousCon) {
-    previousCon = [];
-}
 
 // Setting the date at the top
 var dateElement = document.getElementById("current-date");
@@ -224,7 +218,16 @@ getButton.addEventListener("click", e =>{
     // Prevent the form from submitting by default
     e.preventDefault();
     getExchangeRate();
+
+    // Adding inputs to local storage
+    let conversion = {
+        from: fromCurrency.value,
+        to: toCurrency.value,
+    }
+    conversions.push(conversion);
+    localStorage.setItem('ConverisonList', JSON.stringify(conversions));
 });
+
 
 // Insert Country Flags
 let exchangeIcon = document.querySelector("form .icon");
@@ -236,6 +239,7 @@ exchangeIcon.addEventListener("click", () => {
     loadFlag(toCurrency);
     getExchangeRate();
 })
+
 
 // Grab exchange rate
 function getExchangeRate(){
@@ -257,4 +261,5 @@ function getExchangeRate(){
     }).catch(() =>{
         exchangeRateTxt.innerText = "Something went wrong";
     });
+
 }

@@ -3,17 +3,6 @@ header {
     animation: 1s ease-in-out 0s drawIn;
 }
 
-@keyframes slideInLeft {
-    0% {
-      opacity: 10%;  
-      transform: translateX(-100%);
-    }
-    100% {
-      opacity: 100%;  
-      transform: translateX(0);
-    }
-}
-
 @keyframes drawIn {
     0% {
         opacity: 10%;
@@ -23,8 +12,13 @@ header {
     }
 }
 
+.histTxt {
+    font-size: 1.25rem;
+}
+
+
 .boxMain {
-    animation: 1.5s ease-in-out 0s slideInLeft;
+    animation: 1.5s ease-in-out 0s drawIn;
     margin-top: 2rem;
     padding: 5rem 0 5rem 0;
     width: 900px;
@@ -36,7 +30,7 @@ header {
 }
 
 .boxBit {
-    animation: 1.5s ease-in-out 0s slideInLeft;
+    animation: 1.5s ease-in-out 0s drawIn;
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
@@ -45,6 +39,7 @@ header {
     margin-top: 1rem;
     text-align: center;
     font-weight: bold;
+    animation: 1.5s ease-in-out 0s drawIn;
 }
 
 footer {
@@ -62,6 +57,13 @@ button {
 form {
     padding: 1rem 1.5rem 1rem 1.5rem;
     border: 2px solid rgba(0, 0, 0, 0.137);
+    border-style: dashed;
+    border-radius: 5px;
+}
+
+.history-section {
+    padding: 1rem 1.5rem 1rem 1.5rem;
+    border: 2px solid rgb(0, 0, 0);
     border-style: dashed;
     border-radius: 5px;
 }
