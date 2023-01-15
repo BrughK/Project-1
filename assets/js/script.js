@@ -2,11 +2,12 @@ let dropList = document.querySelectorAll("form select");
 let fromCurrency = document.querySelector(".from select");
 let toCurrency = document.querySelector(".to select");
 let getButton = document.querySelector("form button");
+let getCurrency = document.querySelector("exchange-rate");
 var APIKey = "d66d2ede002583e676b55c4e";
 var todaysDate = moment().format("MMMM Do, YYYY");
 let conversions = [];
 let conList = document.getElementById('history');
-let historyBtn = document.getElementById('hsitory');
+let historyBtn = document.getElementById('history');
 
 
 
@@ -171,10 +172,6 @@ const country_list = {
     "ZWD" : "ZW"
 }
 
-
-// Work in progress for local storage
-
-
 // Setting the date at the top
 var dateElement = document.getElementById("current-date");
 dateElement.textContent = todaysDate;
@@ -218,14 +215,6 @@ getButton.addEventListener("click", e =>{
     // Prevent the form from submitting by default
     e.preventDefault();
     getExchangeRate();
-
-    // Adding inputs to local storage
-    let conversion = {
-        from: fromCurrency.value,
-        to: toCurrency.value,
-    }
-    conversions.push(conversion);
-    localStorage.setItem('ConverisonList', JSON.stringify(conversions));
 });
 
 
@@ -239,7 +228,6 @@ exchangeIcon.addEventListener("click", () => {
     loadFlag(toCurrency);
     getExchangeRate();
 })
-
 
 // Grab exchange rate
 function getExchangeRate(){
@@ -258,8 +246,21 @@ function getExchangeRate(){
         let exchangeRate = result.conversion_rates[toCurrency.value];
         let totalExRate = (amountVal * exchangeRate).toFixed(2);
         exchangeRateTxt.innerText = `${amountVal} ${fromCurrency.value} = ${totalExRate} ${toCurrency.value}`;
+
+        // Adding inputs to local storage
+    let conversion = {
+        out: exchangeRateTxt.innerText
+    }
+    conversions.push(conversion);
+    localStorage.setItem('ConverisonList', JSON.stringify(conversions));
+
+    var label = document.createElement('label');
+    label.setAttribute('class', 'label')
+    var txt = document.createTextNode(JSON.stringify(conversions));
+    label.appendChild(txt);
+    historyBtn.appendChild(label);
+
     }).catch(() =>{
         exchangeRateTxt.innerText = "Something went wrong";
     });
-
 }
