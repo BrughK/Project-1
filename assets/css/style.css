@@ -1,4 +1,4 @@
-header {
+.headerMain {
     padding: 1rem 0 1rem 0;
 }
 
@@ -24,10 +24,13 @@ header {
     font-weight: bold;
 }
 
-img {
-    padding: 0.25rem 1rem 0 1rem;
+.imgFlag {
+    padding: 0 1rem 0 1rem;
 }
 
+footer {
+    margin-top: 7rem;
+}
 
 button {
     margin: 1rem;
@@ -36,8 +39,13 @@ button {
 form {
     padding: 1rem 1.5rem 1rem 1.5rem;
     border: 2px solid rgba(0, 0, 0, 0.137);
-    border-style: dashed;
     border-radius: 5px;
+    box-shadow: 1.2px 3px rgba(0, 0, 0, 0.137);
+}
+
+.select {
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.233);
 }
 
 label {
@@ -66,4 +74,35 @@ label {
 
 #test {
     max-width: 100% !important;
+}
+
+.card {
+    box-shadow: 2px 3px rgba(0, 0, 0, 0.24);
+}
+
+.card:hover {
+    transition: ease-in-out .5s;
+    box-shadow: 2px 3px rgba(0, 0, 0, 0.459);
+}
+
+.headerDev {
+    padding: 2rem;
+    margin: 3rem 0 3rem 0;
+}
+
+.devImg {
+    border-radius: 5px;
+    box-shadow: 2px 3px rgba(0, 0, 0, 0.219);
+}
+
+strong {
+    color: white;
+}
+
+footer a {
+    color: white;
+}
+
+.breaker {
+    color: white;
 }
