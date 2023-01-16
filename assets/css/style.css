@@ -67,15 +67,6 @@ label {
     justify-content: center;
 }
 
-#test2 {
-    width: 100%;
-    max-height: min-content;
-}
-
-#test {
-    max-width: 100% !important;
-}
-
 .card {
     box-shadow: 2px 3px rgba(0, 0, 0, 0.24);
 }
@@ -111,30 +102,124 @@ footer a {
     margin-top: 2rem;
 }
 
+.heroH {
+    padding: 20px 10px 20px 10px;
+    background-image: url('https://i0.wp.com/www.eastmojo.com/wp-content/uploads/2022/09/Untitled-design-72.png?fit=1200%2C675&ssl=1');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 80%;
+}
 
-/* Chart CSS */
+/* Css Button */
 .button-34 {
-    background: #3fd412;
-    border-radius: 999px;
-    box-shadow: #5E5DF0 0 10px 20px -10px;
-    box-sizing: border-box;
-    color: #FFFFFF;
-    cursor: pointer;
-    font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 24px;
-    opacity: 1;
-    outline: 0 solid transparent;
-    padding: 20px 58px;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    width: fit-content;
-    word-break: break-word;
-    border: 0;
+  margin-top: 3rem;
+  padding: 20px 58px;
+  font-size: 1.25rem;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: hsl(171, 100%, 29%);
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  transition: .5s ease-in-out;
+}
+
+.button-34:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ffffff,
+    #7eb1a1,
+    #20a558,
+    #48ff00,
+    #0b6631,
+    #06351f,
+    #037c33,
+    #08803e,
+    #03610b
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
   }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.button-34:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: hsl(171, 100%, 29%);
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
 
   .button-34 a {
     color: inherit;
   }
+
+  .button-34:hover {
+    padding: 20px 70px 20px 70px;
+    transition: .25s ease-in-out;
+  }
+
+  .cHead {
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.308);
+  }
+
+  #crypto-table-body tr {
+    transition: .15s ease-in-out;
+  }
+
+  #crypto-table-body tr:hover {
+    background-color: rgba(0, 0, 0, 0.151);
+    transition: .25s ease-in-out;
+  }
+
+.arrow {
+    display: inline-block;
+    font-size: 0.8em;
+    color: black;
+}
+
+.arrow img {
+  align-items: center;
+  width: 10px;
+  height: 10px;
+}
+
+.ascending {
+    transform: rotate(180deg);
+}
+
+.coinFooter {
+  margin-top: 80px;
+}

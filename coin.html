@@ -11,35 +11,39 @@
   <body>
     <main>
       <!-- Hero banner across the top for header -->
-      <section class="hero is-primary">
-        <div class="hero-body has-text-centered">
-          <p class="title is-2">Crypto Price Chart</p>
+      <section class="hero has-background-primary-dark">
+        <div class="heroH hero-body has-text-centered">
+          <p class="title is-2 has-text-white cHead">Crypto Price Chart</p>
+          <p class="subtitle has-text-white cHead">Sorted by Market Cap Rank</p>
         </div>
       </section>
-
+      <!-- Container to hold coin table -->
       <div class="container containerT has-background-light">
-        <table class="table table is-bordered is-striped is-hoverable is-fullwidth" id="crypto-table">
+        <table class="table table is-bordered is-striped is-fullwidth has-text-centered" id="crypto-table">
           <thead>
-            <tr>
-              <th>Icon</th>
-              <th>Coin Name</th>
-              <th>Symbol</th>
-              <th>Price</th>
+            <tr class="is-selected has-background-primary-dark">
+              <th class="has-text-centered">Icon</th>
+              <th class="has-text-centered">Coin Name</th>
+              <th class="has-text-centered">Ticker Tag</th>
+              <th class="has-text-centered">Total Volume</th>
+              <th class="has-text-centered">24hr % Change</th>
+              <th class="has-text-centered" onclick="sortTable()">Price <span class="arrow"><img src="https://cdn-icons-png.flaticon.com/512/25/25756.png"></span></th>
             </tr>
           </thead>
+          <!-- Data goes in here via JS -->
           <tbody id="crypto-table-body">
           </tbody>
         </table>
       </div>
-      
+      <!-- Container for Home btn -->
       <div class="container">
       <button class="button-34" role="button"><a href="./index.html">Home</a></button>
       </div>
-
       <!-- footer -->
-      <footer class="footer">
-        <div class="content has-text-centered">
-          <p><strong>Currency Converter </strong> The source code is licensed<a href="http://opensource.org/licenses/mit-license.php">MIT</a></p>
+      <footer class="footer coinFooter has-background-primary-dark">
+        <div class="content has-text-centered has-text-primary-light">
+          <p>All coin data sourced from <strong><a href="https://www.coingecko.com/">CoinGecko</a></strong></p>
+          <p>A <strong>Bulma</strong> site by <a href="https://github.com/BrughK/Project-1">Group 3</a></p>
         </div>
       </footer>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
