@@ -21,6 +21,7 @@ fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=mark
 // Sort Price Table
 let currentSort = 'ascending';
 
+// Most code used from W3 schools page
 function sortTable() {
   let table, rows, switching, i, x, y, shouldSwitch;
   table = document.getElementById("crypto-table");

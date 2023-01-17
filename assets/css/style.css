@@ -13,6 +13,10 @@
     justify-content: center;
 }
 
+.wrapper form {
+  border-bottom: .5px solid rgba(0, 0, 0, 0.24);
+}
+
 .boxBit {
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -281,4 +285,13 @@ footer a {
 .crypto-button:hover {
   padding: 20px 70px 20px 70px;
   transition: .25s ease-in-out;
+}
+
+.history-section {
+  margin-top: 1rem;
+}
+
+.history-section h4 {
+  font-size: 1.3rem;
+  font-weight: bold;
 }
