@@ -8,60 +8,46 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Bitcoin</title>
 </head>
-    <body>
-        <main>
-        <!-- Hero banner across the top for header -->
-        <section class="hero is-primary">
-            <div class="hero-body">
-              <p class="title">
-                Bitcoin
-              </p>
-            </div>
-          </section>
-
-          <div class="chart-container">
-          <!-- container for graph/API data  -->
-          <!-- <section class="container is-fluid" id="test2"> -->
-            <section id="test2">
-              <div class="btcwdgt-chart" bw-cash="true" bw-noshadow="true" id="test"></div>
-            </section>
-
-         <!--container for conversion data -->
-          <div class="news-blocks">
-          <section class="container is-fluid">
-              <div class="btcwdgt-news" bw-cur="usd"></div>
-              <div class="btcwdgt-news" bw-cur="cad"></div>
-              <div class="btcwdgt-news" bw-cur="eur"></div>
-              <div class="btcwdgt-news" bw-cur="jpy"></div>
-              <div class="btcwdgt-news" bw-cur="gbp"></div>
-              <div class="btcwdgt-news" bw-cur="aud"></div>
-              <div class="btcwdgt-news" bw-cur="chf"></div>
-          </section>
-          </div>
+  <body>
+    <main>
+      <!-- Hero banner across the top for header -->
+      <section class="hero has-background-primary-dark">
+        <div class="heroH hero-body has-text-centered">
+          <p class="title is-2 has-text-white cHead">Crypto Price Chart</p>
+          <p class="subtitle has-text-white cHead">Sorted by Market Cap Rank</p>
         </div>
-    </main>
-
-
-        <!-- footer -->
-        <footer class="footer">
-            <div class="content has-text-centered">
-              <p>
-                <strong>Currency Converter </strong> The source code is licensed
-                <a href="http://opensource.org/licenses/mit-license.php">MIT</a>
-              </p>
-            </div>
-          </footer>
+      </section>
+      <!-- Container to hold coin table -->
+      <div class="container containerT has-background-light">
+        <table class="table table is-bordered is-striped is-fullwidth has-text-centered" id="crypto-table">
+          <thead>
+            <tr class="is-selected has-background-primary-dark">
+              <th class="has-text-centered">Icon</th>
+              <th class="has-text-centered">Coin Name</th>
+              <th class="has-text-centered">Ticker Tag</th>
+              <th class="has-text-centered">Total Volume</th>
+              <th class="has-text-centered">24hr % Change</th>
+              <th class="has-text-centered" onclick="sortTable()">Price <span class="arrow"><img src="https://cdn-icons-png.flaticon.com/512/25/25756.png"></span></th>
+            </tr>
+          </thead>
+          <!-- Data goes in here via JS -->
+          <tbody id="crypto-table-body">
+          </tbody>
+        </table>
+      </div>
+      <!-- Container for Home btn -->
+      <div class="container">
+      <button class="button-34" role="button"><a href="./index.html">Home</a></button>
+      </div>
+      <!-- footer -->
+      <footer class="footer coinFooter has-background-primary-dark">
+        <div class="content has-text-centered has-text-primary-light">
+          <p>All coin data sourced from <strong><a href="https://www.coingecko.com/">CoinGecko</a></strong></p>
+          <p>A <strong>Bulma</strong> site by <a href="https://github.com/BrughK/Project-1">Group 3</a></p>
+        </div>
+      </footer>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="./assets/script.js"></script>
-    <script>
-        (function(b,i,t,C,O,I,N) {
-          window.addEventListener('load',function() {
-            if(b.getElementById(C))return;
-            I=b.createElement(i),N=b.getElementsByTagName(i)[0];
-            I.src=t;I.id=C;N.parentNode.insertBefore(I, N);
-          },false)
-        })(document,'script','https://widgets.bitcoin.com/widget.js','btcwdgt');
-      </script>
+    <script src="./assets/js/coin.js"></script>
 </body>
 </html>
