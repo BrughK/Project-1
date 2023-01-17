@@ -2,6 +2,7 @@ header {
     padding: 1rem 0 1rem 0;
 }
 
+
 .boxMain {
     margin-top: 2rem;
     padding-bottom: 15rem;
@@ -48,22 +49,35 @@ label {
     padding-bottom: 0.5rem;
 }
 
+html, 
+body,
+main{
+    
+    height: 100vh;
+    margin: 0;
+}
 .chart-container {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    
+    
 }
 
 .container {
     display: flex;
     justify-content: center;
+    
+    
 }
 
 #test2 {
-    width: 100%;
-    max-height: min-content;
+  
+  
 }
 
-#test {
+.btcwdgt-chart, .btcwdgt-chart, .bw-cash, .bw-noshadow, .id{
+    width: 100%;
     max-width: 100% !important;
+    
 }
