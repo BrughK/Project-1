@@ -231,6 +231,8 @@ exchangeIcon.addEventListener("click", () => {
 
 // Grab exchange rate
 function getExchangeRate(){
+    conList.innerHTML = ''
+
     let amount = document.querySelector("form input");
     let exchangeRateTxt = document.querySelector("form .exchange-rate");
     let amountVal = amount.value;
@@ -254,11 +256,13 @@ function getExchangeRate(){
     conversions.push(conversion);
     localStorage.setItem('ConverisonList', JSON.stringify(conversions));
 
-    var label = document.createElement('label');
-    label.setAttribute('class', 'label')
-    var txt = document.createTextNode(JSON.stringify(conversions));
-    label.appendChild(txt);
-    historyBtn.appendChild(label);
+    for (i=0; i < conversions.length; i++) {
+        var label = document.createElement('label');
+        label.setAttribute('class', 'label')
+        var txt = document.createTextNode(conversions[i].out);
+        label.appendChild(txt);
+        historyBtn.appendChild(label);
+    }
 
     }).catch(() =>{
         exchangeRateTxt.innerText = "Something went wrong";
