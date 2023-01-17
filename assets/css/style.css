@@ -63,13 +63,6 @@ button {
     margin: 1rem;
 }
 
-form {
-    padding: 1rem 1.5rem 1rem 1.5rem;
-    border: 2px solid rgba(0, 0, 0, 0.137);
-    border-radius: 5px;
-    box-shadow: 1.2px 3px rgba(0, 0, 0, 0.137);
-}
-
 .select {
     border-radius: 5px;
     border: 1px solid rgba(0, 0, 0, 0.233);
@@ -125,7 +118,7 @@ strong {
 }
 
 footer a {
-    color: white;
+    color: white; 
 }
 
 .breaker {
@@ -256,4 +249,70 @@ footer a {
 
 .coinFooter {
   margin-top: 80px;
+}
+
+.crypto-button {
+  padding: 20px 58px;
+  font-size: 1.25rem;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: hsl(171, 100%, 29%);
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  transition: .5s ease-in-out;
+}
+
+.crypto-button:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ffffff,
+    #7eb1a1,
+    #20a558,
+    #48ff00,
+    #0b6631,
+    #06351f,
+    #037c33,
+    #08803e,
+    #03610b
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.crypto-button:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: hsl(171, 100%, 29%);
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+.crypto-button a {
+  color: inherit;
+}
+
+.crypto-button:hover {
+  padding: 20px 70px 20px 70px;
+  transition: .25s ease-in-out;
 }
