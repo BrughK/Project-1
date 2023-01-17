@@ -18,14 +18,12 @@ const country_list = {
     "ALL" : "AL",
     "AMD" : "AM",
     "AOA" : "AO",
-    "AQD" : "AQ",
     "ARS" : "AR",
     "AUD" : "AU",
     "AZN" : "AZ",
     "BAM" : "BA",
     "BBD" : "BB",
     "BDT" : "BD",
-    "XOF" : "BE",
     "BGN" : "BG",
     "BHD" : "BH",
     "BIF" : "BI",
@@ -36,7 +34,6 @@ const country_list = {
     "BSD" : "BS",
     "NOK" : "BV",
     "BWP" : "BW",
-    "BYR" : "BY",
     "BZD" : "BZ",
     "CAD" : "CA",
     "CDF" : "CD",
@@ -48,14 +45,11 @@ const country_list = {
     "CRC" : "CR",
     "CUP" : "CU",
     "CVE" : "CV",
-    "CYP" : "CY",
     "CZK" : "CZ",
     "DJF" : "DJ",
     "DKK" : "DK",
     "DOP" : "DO",
     "DZD" : "DZ",
-    "ECS" : "EC",
-    "EEK" : "EE",
     "EGP" : "EG",
     "ETB" : "ET",
     "EUR" : "FR",
@@ -88,7 +82,6 @@ const country_list = {
     "KGS" : "KG",
     "KHR" : "KH",
     "KMF" : "KM",
-    "KPW" : "KP",
     "KRW" : "KR",
     "KWD" : "KW",
     "KYD" : "KY",
@@ -98,8 +91,6 @@ const country_list = {
     "LKR" : "LK",
     "LRD" : "LR",
     "LSL" : "LS",
-    "LTL" : "LT",
-    "LVL" : "LV",
     "LYD" : "LY",
     "MAD" : "MA",
     "MDL" : "MD",
@@ -108,7 +99,6 @@ const country_list = {
     "MMK" : "MM",
     "MNT" : "MN",
     "MOP" : "MO",
-    "MRO" : "MR",
     "MTL" : "MT",
     "MUR" : "MU",
     "MVR" : "MV",
@@ -141,12 +131,9 @@ const country_list = {
     "SDG" : "SD",
     "SEK" : "SE",
     "SGD" : "SG",
-    "SKK" : "SK",
     "SLL" : "SL",
     "SOS" : "SO",
     "SRD" : "SR",
-    "STD" : "ST",
-    "SVC" : "SV",
     "SYP" : "SY",
     "SZL" : "SZ",
     "THB" : "TH",
@@ -163,13 +150,10 @@ const country_list = {
     "USD" : "US",
     "UYU" : "UY",
     "UZS" : "UZ",
-    "VEF" : "VE",
     "VND" : "VN",
     "VUV" : "VU",
     "YER" : "YE",
-    "ZAR" : "ZA",
-    "ZMK" : "ZM",
-    "ZWD" : "ZW"
+    "ZAR" : "ZA"
 }
 
 // Setting the date at the top
@@ -229,6 +213,7 @@ exchangeIcon.addEventListener("click", () => {
     getExchangeRate();
 })
 
+
 // Grab exchange rate
 function getExchangeRate(){
     conList.innerHTML = ''
@@ -257,6 +242,10 @@ function getExchangeRate(){
     localStorage.setItem('ConverisonList', JSON.stringify(conversions));
 
     for (i=0; i < conversions.length; i++) {
+        // Keeps last 5 conversions
+        if (conversions.length > 5) {
+            conversions.shift()
+        }
         var label = document.createElement('label');
         label.setAttribute('class', 'label')
         var txt = document.createTextNode(conversions[i].out);
