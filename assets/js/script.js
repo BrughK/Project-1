@@ -8,9 +8,6 @@ var todaysDate = moment().format("MMMM Do, YYYY");
 let conversions = [];
 let conList = document.getElementById('history');
 let historyBtn = document.getElementById('history');
-
-
-
 const country_list = {
     "AED" : "AE",
     "AFN" : "AF",
@@ -191,16 +188,17 @@ function loadFlag(element){
     }
 }
 
+// loads storage after 5 seconds
 window.addEventListener("load", ()=>{
-    getExchangeRate();
+    setTimeout(getStorage(),5000);
 });
 
+// Event listener runs exchange function on button click
 getButton.addEventListener("click", e =>{
     // Prevent the form from submitting by default
     e.preventDefault();
     getExchangeRate();
 });
-
 
 // Insert Country Flags
 let exchangeIcon = document.querySelector("form .icon");
@@ -213,9 +211,26 @@ exchangeIcon.addEventListener("click", () => {
     getExchangeRate();
 })
 
+function getStorage() {
+    conversions = JSON.parse(localStorage.getItem('ConverisonList'));
+    if (conList !== null) {
+        for (i=0; i < conversions.length; i++) {
+            // Keeps last 5 conversions
+            if (conversions.length > 5) {
+                conversions.shift()
+            }
+            var label = document.createElement('label');
+            label.setAttribute('class', 'label')
+            var txt = document.createTextNode(conversions[i].out);
+            label.appendChild(txt);
+            historyBtn.appendChild(label);
+        }
+    }
+}
 
 // Grab exchange rate
 function getExchangeRate(){
+    // Clear the list and print new at end
     conList.innerHTML = ''
 
     let amount = document.querySelector("form input");
@@ -230,17 +245,16 @@ function getExchangeRate(){
     exchangeRateTxt.innerText = "Calculating Rate...";
     let url = `https://v6.exchangerate-api.com/v6/${APIKey}/latest/${fromCurrency.value}`;
     fetch(url).then(response => response.json()).then(result =>{
-        let exchangeRate = result.conversion_rates[toCurrency.value];
-        let totalExRate = (amountVal * exchangeRate).toFixed(2);
-        exchangeRateTxt.innerText = `${amountVal} ${fromCurrency.value} = ${totalExRate} ${toCurrency.value}`;
-
-        // Adding inputs to local storage
+    let exchangeRate = result.conversion_rates[toCurrency.value];
+    let totalExRate = (amountVal * exchangeRate).toFixed(2);
+    exchangeRateTxt.innerText = `${amountVal} ${fromCurrency.value} = ${totalExRate} ${toCurrency.value}`;
+    // Adding inputs to local storage
     let conversion = {
         out: exchangeRateTxt.innerText
     }
     conversions.push(conversion);
     localStorage.setItem('ConverisonList', JSON.stringify(conversions));
-
+    // Loop that creates lables for as many elements in the obj
     for (i=0; i < conversions.length; i++) {
         // Keeps last 5 conversions
         if (conversions.length > 5) {
@@ -252,7 +266,7 @@ function getExchangeRate(){
         label.appendChild(txt);
         historyBtn.appendChild(label);
     }
-
+    // Catch for any errors
     }).catch(() =>{
         exchangeRateTxt.innerText = "Something went wrong";
     });
