@@ -30,8 +30,9 @@ function sortTable() {
       rows = table.rows;
     for (i = 1; i < (rows.length - 1); i++) {
       shouldSwitch = false;
-      x = rows[i].getElementsByTagName("TD")[3];
-      y = rows[i + 1].getElementsByTagName("TD")[3];
+      // Price Column Fix
+      x = rows[i].getElementsByTagName("TD")[5];
+      y = rows[i + 1].getElementsByTagName("TD")[5];
       if (currentSort === 'ascending') {
         if (Number(x.innerHTML.replace('$','')) > Number(y.innerHTML.replace('$',''))) {
           shouldSwitch = true;
