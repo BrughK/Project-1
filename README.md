@@ -1,6 +1,14 @@
 # Project-1
-Group project
+Group 3 - Kasen Brugh, Jillian Hallmark, Jonathan Dawkins, and Hannah Vaughan
+
+## Description
+This is a simple online currency converter that also includes current crypto prices. (add more)
+
+## Visuals/Screenshots
 
 
-## Test
-I enjoy JavaScript because it utilizes both Functional programming and Object-oriented programming.
+
+## Installation
+
+Open your default browser with the following link:
+
